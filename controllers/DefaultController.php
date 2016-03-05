@@ -8,6 +8,7 @@
 
 namespace pheme\settings\controllers;
 
+use pheme\settings\actions\SettingsAction;
 use Yii;
 use pheme\settings\models\Setting;
 use pheme\settings\models\SettingSearch;
@@ -56,7 +57,32 @@ class DefaultController extends Controller
                 'class' => ToggleAction::className(),
                 'modelClass' => 'pheme\settings\models\Setting',
                 //'setFlash' => true,
-            ]
+            ],
+            'customer' => [
+                'class' => SettingsAction::className(),
+                'config' => [
+                    'attributes' => [
+                        [
+                            'section' => 'currency',
+                            'key' => 'rur',
+                            'label' => 'RUB currency',
+                        ],
+                        [
+                            'section' => 'currency',
+                            'key' => 'usd',
+                            'label' => 'USD currency',
+                        ],
+                        [
+                            'section' => 'system',
+                            'key' => 'email',
+                            'label' => 'System E-mail',
+                        ],
+                    ],
+                    'rules' => [
+                        [['currency.rur', 'currency.usd', 'system.email'], 'required'],
+                    ],
+                ],
+            ],
         ];
     }
 

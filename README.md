@@ -136,3 +136,51 @@ function actions(){
     ];
 }
 ```
+
+
+SettingsAction v2
+-----
+
+To use a custom settings form, you can use the included `actions\SettingsAction`.
+
+1. Create an associated view with an `ActiveForm` contain all the settings you need.
+2. Add `pheme\settings\actions\SettingsAction` to the controller's actions.
+
+__Views__:
+See /pheme/settings/views/default/custom.php
+
+
+__Controller__:
+```php
+    public function actions()
+    {
+        return [
+            'customer' => [
+                'class' => SettingsAction::className(),
+                'viewName' => 'custom'	// The form we need to render
+                'config' => [
+                    'attributes' => [
+                        [
+                            'section' => 'currency',
+                            'key' => 'rur',
+                            'label' => 'RUB currency',
+                        ],
+                        [
+                            'section' => 'currency',
+                            'key' => 'usd',
+                            'label' => 'USD currency',
+                        ],
+                        [
+                            'section' => 'system',
+                            'key' => 'email',
+                            'label' => 'System E-mail',
+                        ],
+                    ],
+                    'rules' => [ // Additional rules for validation
+                        [['currency.rur', 'currency.usd', 'system.email'], 'required'],
+                    ],
+                ],
+            ],
+        ];
+    }
+```

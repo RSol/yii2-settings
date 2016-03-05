@@ -26,20 +26,32 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php //echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
-        <?=
-        Html::a(
-            Module::t(
-                'settings',
-                'Create {modelClass}',
-                [
-                    'modelClass' => Module::t('settings', 'Setting'),
+    <div class="row">
+        <div class="col-md-6">
+            <?=
+            Html::a(
+                Module::t(
+                    'settings',
+                    'Create {modelClass}',
+                    [
+                        'modelClass' => Module::t('settings', 'Setting'),
+                    ]
+                ),
+                ['create'],
+                ['class' => 'btn btn-success']
+            ) ?>
+        </div>
+        <div class="col-md-6">
+            <?=
+            Html::a(
+                Module::t('settings', 'Customer'), ['customer'], [
+                    'class' => 'btn btn-primary'
                 ]
-            ),
-            ['create'],
-            ['class' => 'btn btn-success']
-        ) ?>
-    </p>
+            ) ?>
+            <p class="small">Before use be sure that you have "currency.rur", "currency.usd" and "system.email" settings. See "data/data.sql" for example</p>
+        </div>
+    </div>
+
     <?php Pjax::begin(); ?>
     <?=
     GridView::widget(
