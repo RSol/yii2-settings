@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist pheme/yii2-settings "*"
+php composer.phar require --prefer-dist rsol/yii2-settings "*"
 ```
 
 or add
 
 ```
-"pheme/yii2-settings": "*"
+"rsol/yii2-settings": "*"
 ```
 
 to the require section of your `composer.json` file.
@@ -24,7 +24,7 @@ to the require section of your `composer.json` file.
 Subsequently, run
 
 ```php
-./yii migrate/up --migrationPath=@vendor/pheme/yii2-settings/migrations
+./yii migrate/up --migrationPath=@vendor/rsol/yii2-settings/migrations
 ```
 
 in order to create the settings table in your database.
@@ -42,7 +42,7 @@ Add this to your main configuration's modules array
 ```php
 'modules' => [
     'settings' => [
-        'class' => 'pheme\settings\Module',
+        'class' => 'rsol\settings\Module',
         'sourceLanguage' => 'en'
     ],
     ...
@@ -54,7 +54,7 @@ Add this to your main configuration's components array
 ```php
 'components' => [
     'settings' => [
-        'class' => 'pheme\settings\components\Settings'
+        'class' => 'rsol\settings\components\Settings'
     ],
     ...
 ]
@@ -88,7 +88,7 @@ To use a custom settings form, you can use the included `SettingsAction`.
 
 1. Create a model class with your validation rules.
 2. Create an associated view with an `ActiveForm` contain all the settings you need.
-3. Add `pheme\settings\SettingsAction` to the controller's actions.
+3. Add `rsol\settings\SettingsAction` to the controller's actions.
 
 The settings will be stored in section taken from the form name, with the key being the field name.
 
@@ -127,7 +127,7 @@ function actions(){
    return [
    		//....
             'site-settings' => [
-                'class' => 'pheme\settings\SettingsAction',
+                'class' => 'rsol\settings\SettingsAction',
                 'modelClass' => 'app\models\Site',
                 //'scenario' => 'site',	// Change if you want to re-use the model for multiple setting form.
                 'viewName' => 'site-settings'	// The form we need to render
@@ -144,10 +144,10 @@ SettingsAction v2
 To use a custom settings form, you can use the included `actions\SettingsAction`.
 
 1. Create an associated view with an `ActiveForm` contain all the settings you need.
-2. Add `pheme\settings\actions\SettingsAction` to the controller's actions.
+2. Add `rsol\settings\actions\SettingsAction` to the controller's actions.
 
 __Views__:
-See /pheme/settings/views/default/custom.php
+See /rsol/settings/views/default/custom.php
 
 
 __Controller__:

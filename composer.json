@@ -1,5 +1,5 @@
 {
-    "name": "pheme/yii2-settings",
+    "name": "rsol/yii2-settings",
     "description": "Yii2 Database settings",
     "type": "yii2-extension",
     "keywords": [
@@ -10,17 +10,17 @@
     "license": "BSD-3-Clause",
     "authors": [
         {
-            "name": "Aris Karageorgos",
+            "name": "Slava Rudnev",
             "email": "aris@phe.me"
         }
     ],
     "require": {
         "yiisoft/yii2": ">=2.0.6",
-        "pheme/yii2-toggle-column": "*"
+        "rsol/yii2-toggle-column": "*"
     },
     "autoload": {
         "psr-4": {
-            "pheme\\settings\\": ""
+            "rsol\\settings\\": ""
         }
     }
 }

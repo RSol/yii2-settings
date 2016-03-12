@@ -14,7 +14,7 @@
  */
 
 
-namespace pheme\settings\models;
+namespace rsol\settings\models;
 
 
 use yii\base\DynamicModel;
@@ -28,7 +28,7 @@ class Dynamic extends DynamicModel
     private $labels = [];
 
     /**
-     * @var array [attribute => type] (list of types see in \pheme\settings\models\Setting::getTypes)
+     * @var array [attribute => type] (list of types see in \rsol\settings\models\Setting::getTypes)
      */
     private $types = [];
 

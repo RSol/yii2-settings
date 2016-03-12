@@ -7,11 +7,11 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-use pheme\settings\Module;
+use rsol\settings\Module;
 
 /**
  * @var yii\web\View $this
- * @var pheme\settings\models\Setting $model
+ * @var rsol\settings\models\Setting $model
  */
 
 $this->title = $model->section. '.' . $model->key;

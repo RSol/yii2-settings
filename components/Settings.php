@@ -6,7 +6,7 @@
  * @license MIT http://opensource.org/licenses/MIT
  */
 
-namespace pheme\settings\components;
+namespace rsol\settings\components;
 
 use yii\base\Component;
 use yii\caching\Cache;
@@ -20,11 +20,11 @@ class Settings extends Component
     /**
      * @var string settings model. Make sure your settings model calls clearCache in the afterSave callback
      */
-    public $modelClass = 'pheme\settings\models\Setting';
+    public $modelClass = 'rsol\settings\models\BaseSetting';
 
     /**
      * Model to for storing and retrieving settings
-     * @var \pheme\settings\models\SettingInterface
+     * @var \rsol\settings\models\SettingInterface
      */
     protected $model;
 
@@ -53,7 +53,7 @@ class Settings extends Component
      *
      * @var string cache key
      */
-    public $cacheKey = 'pheme/settings';
+    public $cacheKey = 'rsol/settings';
 
     /**
      * Holds a cached copy of the data for the current request

@@ -5,11 +5,11 @@
  * @license MIT http://opensource.org/licenses/MIT
  */
 
-namespace pheme\settings\models;
+namespace rsol\settings\models;
 
 /**
  * Interface SettingInterface
- * @package pheme\settings\models
+ * @package rsol\settings\models
  *
  * @author Aris Karageorgos <aris@phe.me>
  */

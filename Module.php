@@ -6,7 +6,7 @@
  * @license MIT http://opensource.org/licenses/MIT
  */
 
-namespace pheme\settings;
+namespace rsol\settings;
 
 use Yii;
 
@@ -18,7 +18,7 @@ class Module extends \yii\base\Module
     /**
      * @var string The controller namespace to use
      */
-    public $controllerNamespace = 'pheme\settings\controllers';
+    public $controllerNamespace = 'rsol\settings\controllers';
 
     /**
      *
@@ -48,7 +48,7 @@ class Module extends \yii\base\Module
         Yii::$app->i18n->translations['extensions/yii2-settings/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => $this->sourceLanguage,
-            'basePath' => '@vendor/pheme/yii2-settings/messages',
+            'basePath' => '@vendor/rsol/yii2-settings/messages',
             'fileMap' => [
                 'extensions/yii2-settings/settings' => 'settings.php',
             ],

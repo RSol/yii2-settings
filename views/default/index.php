@@ -7,14 +7,14 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use pheme\settings\Module;
-use pheme\settings\models\Setting;
+use rsol\settings\Module;
+use rsol\settings\models\Setting;
 use yii\helpers\ArrayHelper;
 use yii\widgets\Pjax;
 
 /**
  * @var yii\web\View $this
- * @var pheme\settings\models\SettingSearch $searchModel
+ * @var rsol\settings\models\SettingSearch $searchModel
  * @var yii\data\ActiveDataProvider $dataProvider
  */
 
@@ -26,32 +26,20 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php //echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <div class="row">
-        <div class="col-md-6">
-            <?=
-            Html::a(
-                Module::t(
-                    'settings',
-                    'Create {modelClass}',
-                    [
-                        'modelClass' => Module::t('settings', 'Setting'),
-                    ]
-                ),
-                ['create'],
-                ['class' => 'btn btn-success']
-            ) ?>
-        </div>
-        <div class="col-md-6">
-            <?=
-            Html::a(
-                Module::t('settings', 'Customer'), ['customer'], [
-                    'class' => 'btn btn-primary'
+    <p>
+        <?=
+        Html::a(
+            Module::t(
+                'settings',
+                'Create {modelClass}',
+                [
+                    'modelClass' => Module::t('settings', 'Setting'),
                 ]
-            ) ?>
-            <p class="small">Before use be sure that you have "currency.rur", "currency.usd" and "system.email" settings. See "data/data.sql" for example</p>
-        </div>
-    </div>
-
+            ),
+            ['create'],
+            ['class' => 'btn btn-success']
+        ) ?>
+    </p>
     <?php Pjax::begin(); ?>
     <?=
     GridView::widget(
@@ -72,7 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'key',
                 'value:ntext',
                 [
-                    'class' => '\pheme\grid\ToggleColumn',
+                    'class' => '\rsol\grid\ToggleColumn',
                     'attribute' => 'active',
                     'filter' => [1 => Yii::t('yii', 'Yes'), 0 => Yii::t('yii', 'No')],
                 ],

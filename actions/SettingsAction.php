@@ -14,12 +14,12 @@
  */
 
 
-namespace pheme\settings\actions;
+namespace rsol\settings\actions;
 
 
-use pheme\settings\models\Dynamic;
-use pheme\settings\models\Setting;
-use pheme\settings\Module;
+use rsol\settings\models\Dynamic;
+use rsol\settings\models\Setting;
+use rsol\settings\Module;
 use yii\base\Action;
 use yii\base\ErrorException;
 use yii\helpers\ArrayHelper;
@@ -63,12 +63,17 @@ class SettingsAction extends Action
     public $viewName = 'custom';
 
     /**
-     * @var array all current settings @see \pheme\settings\components\Settings::getRawConfig
+     * @var string
+     */
+    public $successMessage = '';
+
+    /**
+     * @var array all current settings @see \rsol\settings\components\Settings::getRawConfig
      */
     private $settings = [];
 
     /**
-     * @var array all default validators @see \pheme\settings\models\Setting::getTypes
+     * @var array all default validators @see \rsol\settings\models\Setting::getTypes
      */
     private $validators = [];
 
@@ -125,7 +130,8 @@ class SettingsAction extends Action
 
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             $model->save();
-            \Yii::$app->session->setFlash('success', Module::t('settings', 'Settings saved'));
+            $message = $this->successMessage ?: Module::t('settings', 'Settings saved');
+            \Yii::$app->session->setFlash('success', $message);
         }
 
         return $this->controller->render($this->viewName, [

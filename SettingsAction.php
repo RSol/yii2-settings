@@ -1,5 +1,5 @@
 <?php
-namespace pheme\settings;
+namespace rsol\settings;
 
 use Yii;
 use yii\base\Action;

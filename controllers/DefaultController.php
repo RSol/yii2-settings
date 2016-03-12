@@ -6,13 +6,13 @@
  * @license MIT http://opensource.org/licenses/MIT
  */
 
-namespace pheme\settings\controllers;
+namespace rsol\settings\controllers;
 
-use pheme\settings\actions\SettingsAction;
+use rsol\settings\actions\SettingsAction;
 use Yii;
-use pheme\settings\models\Setting;
-use pheme\settings\models\SettingSearch;
-use pheme\grid\actions\ToggleAction;
+use rsol\settings\models\Setting;
+use rsol\settings\models\SettingSearch;
+use rsol\grid\actions\ToggleAction;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -55,7 +55,7 @@ class DefaultController extends Controller
         return [
             'toggle' => [
                 'class' => ToggleAction::className(),
-                'modelClass' => 'pheme\settings\models\Setting',
+                'modelClass' => 'rsol\settings\models\Setting',
                 //'setFlash' => true,
             ],
             'customer' => [

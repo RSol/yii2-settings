@@ -6,13 +6,13 @@
  */
 
 use yii\helpers\Html;
-use pheme\settings\Module;
+use rsol\settings\Module;
 use yii\widgets\ActiveForm;
 
 /**
  * @var yii\web\View $this
  * @var array $config
- * @var \pheme\settings\models\Dynamic $model
+ * @var \rsol\settings\models\Dynamic $model
  */
 
 $this->title = Module::t(
