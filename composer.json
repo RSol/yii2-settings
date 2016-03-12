@@ -10,13 +10,17 @@
     "license": "BSD-3-Clause",
     "authors": [
         {
-            "name": "Slava Rudnev",
+            "name": "Aris Karageorgos",
             "email": "aris@phe.me"
+        },
+        {
+            "name": "Slava Rudnev",
+            "email": "slava.rusnwv@gmail.com"
         }
     ],
     "require": {
         "yiisoft/yii2": ">=2.0.6",
-        "rsol/yii2-toggle-column": "*"
+        "pheme/yii2-toggle-column": "*"
     },
     "autoload": {
         "psr-4": {
